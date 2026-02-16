@@ -1,7 +1,7 @@
 {
     "name": "kohlercode/btc",
     "type": "typo3-cms-extension",
-    "description": "Bitcoin Hub – Frontend plugins for realtime cryptocurrency data via CoinGecko API",
+    "description": "BTC - Frontend plugins for realtime cryptocurrency data via CoinGecko API",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
