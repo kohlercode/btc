@@ -1,0 +1,27 @@
+{
+    "name": "kohlercode/btc",
+    "type": "typo3-cms-extension",
+    "description": "Bitcoin Hub – Frontend plugins for realtime cryptocurrency data via CoinGecko API",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Simon Köhler",
+            "role": "Developer",
+            "homepage": "https://www.kohlercode.com"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": ">=14.0.0 <15.0.0",
+        "php": ">=8.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "KOHLERCODE\\Btc\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "btc"
+        }
+    }
+}

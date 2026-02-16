@@ -1,0 +1,14 @@
+# Bitcoin Hub – Dependency Injection
+# Author: Simon Köhler (KOHLERCODE LLC)
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  KOHLERCODE\Btc\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/Dto/*'
+
+  KOHLERCODE\Btc\Service\CoinGeckoService: ~
+  # Optional: override $baseUrl for a different API endpoint

@@ -1,0 +1,34 @@
+<f:layout name="default" />
+<f:section name="Main">
+  <f:if condition="{coin}">
+    <f:then>
+      <div class="btc-coindetail" data-coin-id="{coinId}">
+        <header class="btc-coindetail__header">
+          <img src="{coin.image.large}" alt="{coin.name}" class="btc-coindetail__icon" width="64" height="64" />
+          <div>
+            <h2 class="btc-coindetail__title">{coin.name} ({coin.symbol})</h2>
+            <p class="btc-coindetail__price">{coin.market_data.current_price.usd -> f:format.number(decimals: 2, decimalSeparator: ',', thousandsSeparator: '.')} <f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:currency.usd" /></p>
+          </div>
+        </header>
+        <div class="btc-coindetail__stats">
+          <dl>
+            <dt><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:label.marketCap" /></dt>
+            <dd>{coin.market_data.market_cap.usd -> f:format.number(decimals: 0, decimalSeparator: ',', thousandsSeparator: '.')} <f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:currency.usd" /></dd>
+            <dt><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:label.volume24h" /></dt>
+            <dd>{coin.market_data.total_volume.usd -> f:format.number(decimals: 0, decimalSeparator: ',', thousandsSeparator: '.')} <f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:currency.usd" /></dd>
+            <dt><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:label.change24h" /></dt>
+            <dd>{coin.market_data.price_change_percentage_24h -> f:format.number(decimals: 2)}%</dd>
+          </dl>
+        </div>
+        <f:if condition="{coin.description.en}">
+          <div class="btc-coindetail__description">
+            <f:format.html>{coin.description.en}</f:format.html>
+          </div>
+        </f:if>
+      </div>
+    </f:then>
+    <f:else>
+      <p class="btc-coindetail__error"><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:error.coinNotFound" arguments="{0: coinId}" /></p>
+    </f:else>
+  </f:if>
+</f:section>

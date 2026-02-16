@@ -1,0 +1,20 @@
+---
+description: Corporate identity and business logic for KOHLERCODE LLC
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# KOHLERCODE LLC - Identity & Standards
+
+## 1. Company Profile
+- **Entity:** KOHLERCODE LLC (US-based)
+- **Founder:** Simon Köhler
+- **Focus:** High-end TYPO3 development, Shopify Themes, and AI Automation.
+
+## 2. Branding & Documentation
+- **Author Tag:** Always use `Author: Simon Köhler (KOHLERCODE LLC)` in file headers.
+- **Language:** Code comments should be in English, but UI translations (t-filters) should prioritize German/Spanish/English as required by the project.
+
+## 3. Workflow Preferences
+- **Architecture:** Prioritize modularity and "Agent-friendly" code (clear naming, no "magic" numbers).
+- **Communication:** Be concise. If a task involves a cost-intensive API (like ElevenLabs or HeyGen), warn the user before generating the execution script.

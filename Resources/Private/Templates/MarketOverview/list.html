@@ -1,0 +1,34 @@
+<f:layout name="default" />
+<f:section name="Main">
+  <div class="btc-marketoverview">
+    <table class="btc-marketoverview__table">
+      <thead>
+        <tr>
+          <th><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:table.rank" /></th>
+          <th><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:table.coin" /></th>
+          <th><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:table.price" /></th>
+          <th><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:table.change24h" /></th>
+          <th><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:table.marketCap" /></th>
+          <th><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:table.volume24h" /></th>
+        </tr>
+      </thead>
+      <tbody>
+        <f:for each="{coins}" as="coin">
+          <tr class="btc-marketoverview__row">
+            <td>{coin.marketCapRank}</td>
+            <td>
+              <img src="{coin.image}" alt="" width="24" height="24" loading="lazy" />
+              {coin.name} ({coin.symbol})
+            </td>
+            <td>{coin.currentPrice -> f:format.number(decimals: 2, decimalSeparator: ',', thousandsSeparator: '.')} <f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:currency.usd" /></td>
+            <td class="{coin.priceChangePercentage24h >= 0 ? 'btc-marketoverview__change--up' : 'btc-marketoverview__change--down'}">
+              {coin.priceChangePercentage24h -> f:format.number(decimals: 2)}%
+            </td>
+            <td>{coin.marketCap -> f:format.number(decimals: 0, decimalSeparator: ',', thousandsSeparator: '.')}</td>
+            <td>{coin.totalVolume -> f:format.number(decimals: 0, decimalSeparator: ',', thousandsSeparator: '.')}</td>
+          </tr>
+        </f:for>
+      </tbody>
+    </table>
+  </div>
+</f:section>

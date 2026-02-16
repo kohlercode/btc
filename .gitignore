@@ -1,0 +1,21 @@
+# Composer
+/vendor/
+composer.lock
+composer.phar
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# TYPO3
+*.log
+typo3temp/
+uploads/
+
+# Local / env
+.env
+.env.local

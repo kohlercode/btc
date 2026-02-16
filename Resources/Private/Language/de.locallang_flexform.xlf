@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="EXT:btc/Resources/Private/Language/locallang_flexform.xlf">
+    <body>
+      <trans-unit id="PriceTicker.sheet">
+        <source>Price Ticker</source>
+        <target>Preisticker</target>
+      </trans-unit>
+      <trans-unit id="PriceTicker.limit">
+        <source>Number of coins (if no IDs set)</source>
+        <target>Anzahl Coins (wenn keine IDs gesetzt)</target>
+      </trans-unit>
+      <trans-unit id="PriceTicker.coinIds">
+        <source>Coin IDs (comma-separated, e.g. bitcoin,ethereum)</source>
+        <target>Coin-IDs (kommagetrennt, z. B. bitcoin,ethereum)</target>
+      </trans-unit>
+      <trans-unit id="CoinDetail.sheet">
+        <source>Coin Detail</source>
+        <target>Coin-Detail</target>
+      </trans-unit>
+      <trans-unit id="CoinDetail.coinId">
+        <source>CoinGecko coin ID (e.g. bitcoin)</source>
+        <target>CoinGecko Coin-ID (z. B. bitcoin)</target>
+      </trans-unit>
+      <trans-unit id="MarketOverview.sheet">
+        <source>Market Overview</source>
+        <target>Marktübersicht</target>
+      </trans-unit>
+      <trans-unit id="MarketOverview.limit">
+        <source>Number of coins to display</source>
+        <target>Anzahl anzuzeigender Coins</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

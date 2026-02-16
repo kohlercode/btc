@@ -1,0 +1,48 @@
+---
+description: Advanced TYPO3 v14 Extension & Plugin Development Standards
+globs: ["Classes/**/*.php", "Configuration/**/*.php", "Configuration/**/*.yaml", "Resources/Private/**/*.html", "ext_emconf.php", "composer.json"]
+alwaysApply: false
+---
+
+# TYPO3 v14 Extension & Plugin Standards (KOHLERCODE LLC)
+
+You are an expert TYPO3 Core Developer. All code must adhere to TYPO3 v14.x standards and PHP 8.3+ best practices.
+
+## 1. Naming & Identity
+- **Vendor:** Always use `KOHLERCODE` (uppercase) for the vendor name.
+- **Namespaces:** `KOHLERCODE\[ExtensionName]\...` (e.g., `KOHLERCODE\MyPlugin\Controller`).
+- **Extension Keys:** Use lowercase with underscores (e.g., `my_extension`).
+- **Composer Name:** `kohlercode/my-extension` (kebab-case).
+
+## 2. PHP & Core API (v14 Standards)
+- **Strict Typing:** Every PHP file MUST start with `declare(strict_types=1);`.
+- **Modern PHP:** Use PHP 8.3 features (readonly properties, constructor promotion, union types).
+- **Dependency Injection:** Use Constructor Injection exclusively. Never use `GeneralUtility::makeInstance` for injectable classes.
+- **Configuration Sets:** Use the new `Configuration/Sets/` pattern for extension settings instead of legacy TypoScript constants where applicable.
+
+## 3. Plugin & Content Element Registration
+- **TCA Overrides:** Register plugins in `Configuration/TCA/Overrides/tt_content.php`.
+- **Icons:** Register icons via `Configuration/Icons.php`.
+- **Naming:** Plugin keys should be UpperCamelCase (e.g., `InventoryList`).
+
+## 4. Fluid 5 & Templating
+- **Flexible Naming:** Use the new Fluid 5 lowercase naming convention for templates, partials, and layouts (e.g., `Resources/Private/Templates/MyPlugin/list.html` instead of `List.html`).
+- **ViewHelpers:** Prioritize Core ViewHelpers. If custom ViewHelpers are needed, ensure they implement `ViewHelperInterface`.
+- **Assets:** Use the `f:asset.script` and `f:asset.css` ViewHelpers for resource inclusion.
+
+## 5. Backend & Localization
+- **XLIFF Indentation:** Use **2 spaces** for `.xlf` files (TYPO3 v14 standard).
+- **Labels:** Never hardcode strings. Use `LLL:EXT:my_extension/Resources/Private/Language/locallang.xlf:my_key`.
+- **Breadcrumbs:** Ensure backend modules utilize the new v14 breadcrumb API.
+- **Localization:** All extensions created by KOHLERCODE are available in English (default), Spanish and German. Always generate the .xlf files accordingly. Example: `locallang_db.xlf (English)`, `es.locallang_db.xlf (Spanish)`, `de.locallang_db.xlf (German)`.
+- **No hard coded Labels:** Use `<f:translate>` ViewHelpers to translate labels, headers, descriptions and table heads, according to the official docs: `https://docs.typo3.org/other/typo3/view-helper-reference/main/en-us/Global/Translate.html`.
+
+## 6. Testing & Quality
+- **Review:** Before finishing, verify that no deprecated classes from TYPO3 v13 or older versions are used.
+- **Standard:** Adhere to PSR-12 coding standards.
+
+## 7. Viewhelpers
+- **Use TYPO3 docs:** Before creating a custom Viewhelper, check docs here to make sure you use the correct methods: `https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/Fluid/DevelopCustomViewhelper.html`. Viewhelper Classes are saved in the folder `Classes/Viewhelpers/CustomViewhelper.php`.
+
+## 8. Extension Icon
+- **File Extension.svg:** The file has to be located in `Resources/Public/Icons/Extension.svg` and not in the root folder.

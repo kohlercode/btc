@@ -1,0 +1,22 @@
+<f:layout name="default" />
+<f:section name="Main">
+  <div class="btc-priceticker">
+    <ul class="btc-priceticker__list">
+      <f:for each="{coins}" as="coin">
+        <li class="btc-priceticker__item">
+          <img src="{coin.image}" alt="{coin.name}" class="btc-priceticker__icon" width="24" height="24" loading="lazy" />
+          <span class="btc-priceticker__name">{coin.name}</span>
+          <span class="btc-priceticker__price">{coin.currentPrice -> f:format.number(decimals: 2, decimalSeparator: ',', thousandsSeparator: '.')} <f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:currency.usd" /></span>
+          <f:if condition="{coin.priceChangePercentage24h} >= 0">
+            <f:then>
+              <span class="btc-priceticker__change btc-priceticker__change--up">+{coin.priceChangePercentage24h -> f:format.number(decimals: 2)}%</span>
+            </f:then>
+            <f:else>
+              <span class="btc-priceticker__change btc-priceticker__change--down">{coin.priceChangePercentage24h -> f:format.number(decimals: 2)}%</span>
+            </f:else>
+          </f:if>
+        </li>
+      </f:for>
+    </ul>
+  </div>
+</f:section>

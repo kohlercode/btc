@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="EXT:btc/Resources/Private/Language/locallang.xlf">
+    <body>
+      <trans-unit id="table.rank">
+        <source>#</source>
+        <target>#</target>
+      </trans-unit>
+      <trans-unit id="table.coin">
+        <source>Coin</source>
+        <target>Coin</target>
+      </trans-unit>
+      <trans-unit id="table.price">
+        <source>Price</source>
+        <target>Preis</target>
+      </trans-unit>
+      <trans-unit id="table.change24h">
+        <source>24h %</source>
+        <target>24h %</target>
+      </trans-unit>
+      <trans-unit id="table.marketCap">
+        <source>Market Cap</source>
+        <target>Marktkapitalisierung</target>
+      </trans-unit>
+      <trans-unit id="table.volume24h">
+        <source>Volume (24h)</source>
+        <target>Volumen (24h)</target>
+      </trans-unit>
+      <trans-unit id="label.marketCap">
+        <source>Market Cap</source>
+        <target>Marktkapitalisierung</target>
+      </trans-unit>
+      <trans-unit id="label.volume24h">
+        <source>24h Volume</source>
+        <target>24h-Volumen</target>
+      </trans-unit>
+      <trans-unit id="label.change24h">
+        <source>24h Change</source>
+        <target>24h-Veränderung</target>
+      </trans-unit>
+      <trans-unit id="error.coinNotFound">
+        <source>Coin "%s" not found.</source>
+        <target>Coin „%s“ nicht gefunden.</target>
+      </trans-unit>
+      <trans-unit id="currency.usd">
+        <source>USD</source>
+        <target>USD</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

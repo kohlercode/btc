@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+  <meta>
+    <langDisable>1</langDisable>
+  </meta>
+  <sheets>
+    <sDEF>
+      <ROOT>
+        <sheetTitle>LLL:EXT:btc/Resources/Private/Language/locallang_flexform.xlf:MarketOverview.sheet</sheetTitle>
+        <type>array</type>
+        <el>
+          <settings.limit>
+            <TCEforms>
+              <label>LLL:EXT:btc/Resources/Private/Language/locallang_flexform.xlf:MarketOverview.limit</label>
+              <config>
+                <type>input</type>
+                <size>5</size>
+                <eval>int</eval>
+                <default>20</default>
+              </config>
+            </TCEforms>
+          </settings.limit>
+        </el>
+      </ROOT>
+    </sDEF>
+  </sheets>
+</T3DataStructure>

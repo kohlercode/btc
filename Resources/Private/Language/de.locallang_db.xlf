@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="EXT:btc/Resources/Private/Language/locallang_db.xlf">
+    <body>
+      <trans-unit id="plugin.tabs.settings">
+        <source>Plugin settings</source>
+        <target>Plugin-Einstellungen</target>
+      </trans-unit>
+      <trans-unit id="plugin.priceticker.title">
+        <source>Bitcoin Hub: Price Ticker</source>
+        <target>Bitcoin Hub: Preisticker</target>
+      </trans-unit>
+      <trans-unit id="plugin.coindetail.title">
+        <source>Bitcoin Hub: Coin Detail</source>
+        <target>Bitcoin Hub: Coin-Detail</target>
+      </trans-unit>
+      <trans-unit id="plugin.marketoverview.title">
+        <source>Bitcoin Hub: Market Overview</source>
+        <target>Bitcoin Hub: Marktübersicht</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
