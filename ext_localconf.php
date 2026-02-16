@@ -15,7 +15,7 @@ defined('TYPO3') || exit;
         'Btc',
         'PriceTicker',
         [\KOHLERCODE\Btc\Controller\PriceTickerController::class => 'list'],
-        [],
+        [\KOHLERCODE\Btc\Controller\PriceTickerController::class => 'list'],
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
     );
 
@@ -31,7 +31,7 @@ defined('TYPO3') || exit;
         'Btc',
         'MarketOverview',
         [\KOHLERCODE\Btc\Controller\MarketOverviewController::class => 'list'],
-        [],
+        [\KOHLERCODE\Btc\Controller\MarketOverviewController::class => 'list'],
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
     );
 })();
