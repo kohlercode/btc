@@ -8,9 +8,9 @@ Show **live cryptocurrency prices and market data** on your TYPO3 website. Bitco
 
 ## Live Examples
 
-https://globaltactic.com/crypto/market-overview
-https://globaltactic.com/crypto/prices
-https://globaltactic.com/crypto/prices/bitcoin
+- https://globaltactic.com/crypto/market-overview
+- https://globaltactic.com/crypto/prices
+- https://globaltactic.com/crypto/prices/bitcoin
 
 ## Requirements
 
