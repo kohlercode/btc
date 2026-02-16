@@ -1,7 +1,4 @@
 <?php
-
-declare(strict_types=1);
-
 /**
  * Extension configuration for btc (Bitcoin Hub)
  *
