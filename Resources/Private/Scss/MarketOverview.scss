@@ -1,0 +1,167 @@
+/**
+ * Bitcoin Hub – Market Overview plugin styles
+ * Standalone, responsive, sortable table. Author: Simon Köhler (KOHLERCODE LLC)
+ */
+
+.btc-marketoverview {
+  --btc-table-bg: #1a1d24;
+  --btc-table-border: #2d323c;
+  --btc-table-text: #e8eaed;
+  --btc-table-muted: #9aa0a6;
+  --btc-up: #0ecb81;
+  --btc-down: #f6465d;
+  --btc-table-radius: 8px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--btc-table-text);
+  background: var(--btc-table-bg);
+  border: 1px solid var(--btc-table-border);
+  border-radius: var(--btc-table-radius);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.btc-marketoverview__table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  th,
+  td {
+    padding: 0.75rem 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--btc-table-border);
+    vertical-align: middle;
+  }
+
+  thead th {
+    font-weight: 600;
+    color: var(--btc-table-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      color: var(--btc-table-text);
+    }
+
+    &[aria-sort]::after {
+      margin-left: 0.25rem;
+      opacity: 0.6;
+    }
+
+    &[aria-sort="ascending"]::after {
+      content: "↑";
+    }
+
+    &[aria-sort="descending"]::after {
+      content: "↓";
+    }
+  }
+
+  tbody tr {
+    transition: background 0.15s ease;
+  }
+
+  tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  tbody td {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .btc-marketoverview__change--up {
+    color: var(--btc-up);
+    font-weight: 600;
+  }
+
+  .btc-marketoverview__change--down {
+    color: var(--btc-down);
+    font-weight: 600;
+  }
+}
+
+.btc-marketoverview__table td:nth-child(1) {
+  width: 2.5rem;
+  text-align: right;
+}
+
+.btc-marketoverview__table td:nth-child(2) {
+  min-width: 0;
+}
+
+.btc-marketoverview__table td:nth-child(2) img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.btc-marketoverview__table th:nth-child(3),
+.btc-marketoverview__table td:nth-child(3),
+.btc-marketoverview__table th:nth-child(4),
+.btc-marketoverview__table td:nth-child(4) {
+  text-align: right;
+}
+
+.btc-marketoverview__table th:nth-child(5),
+.btc-marketoverview__table td:nth-child(5),
+.btc-marketoverview__table th:nth-child(6),
+.btc-marketoverview__table td:nth-child(6) {
+  text-align: right;
+}
+
+@media (max-width: 639px) {
+  .btc-marketoverview__table {
+    display: block;
+  }
+
+  .btc-marketoverview__table thead {
+    display: none;
+  }
+
+  .btc-marketoverview__table tr {
+    display: block;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--btc-table-border);
+  }
+
+  .btc-marketoverview__table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0;
+    border: none;
+
+    &::before {
+      content: attr(data-label);
+      font-size: 0.75rem;
+      color: var(--btc-table-muted);
+      margin-right: 0.5rem;
+    }
+  }
+
+  .btc-marketoverview__table td:nth-child(1) { order: 1; }
+  .btc-marketoverview__table td:nth-child(2) { order: 0; }
+  .btc-marketoverview__table td:nth-child(3),
+  .btc-marketoverview__table td:nth-child(4),
+  .btc-marketoverview__table td:nth-child(5),
+  .btc-marketoverview__table td:nth-child(6) { order: 2; }
+}
+
+@media (min-width: 640px) {
+  .btc-marketoverview__table {
+    table-layout: auto;
+  }
+
+  .btc-marketoverview__table th,
+  .btc-marketoverview__table td {
+    padding: 0.75rem 1rem;
+  }
+}

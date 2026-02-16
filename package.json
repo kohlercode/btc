@@ -1,0 +1,11 @@
+{
+  "name": "kohlercode/btc",
+  "private": true,
+  "scripts": {
+    "build:css": "sass Resources/Private/Scss:Resources/Public/Css --no-source-map",
+    "watch:css": "sass Resources/Private/Scss:Resources/Public/Css --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}

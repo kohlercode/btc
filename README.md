@@ -1,41 +1,57 @@
 # Bitcoin Hub (btc)
 
-TYPO3 extension that provides frontend content elements for **realtime cryptocurrency data** via the [CoinGecko API](https://www.coingecko.com/en/api).
+Show **live cryptocurrency prices and market data** on your TYPO3 website. Bitcoin Hub adds three content elements you can drop onto any page: a price ticker, a single-coin detail view, and a sortable market overview table. Data is loaded from the [CoinGecko API](https://www.coingecko.com/en/api)—no API key required.
 
 **Author:** Simon Köhler (KOHLERCODE LLC)
 
+---
+
 ## Requirements
 
-- TYPO3 14.x
+- TYPO3 14.x  
 - PHP 8.3+
+
+---
 
 ## Installation
 
-Install via Composer: `composer require kohlercode/btc`  
-Or load the extension from `ext_emconf.php` and activate in the TYPO3 Extension Manager.
+- **Composer:** `composer require kohlercode/btc`  
+- **Or:** Install and activate the extension in the TYPO3 Extension Manager.
 
-## Plugin structure (scalable)
+---
 
-| Plugin           | List type            | Purpose |
-|-----------------|----------------------|--------|
-| **Price Ticker**| `btc_priceticker`    | Compact list of coin prices (top N or custom IDs). |
-| **Coin Detail** | `btc_coindetail`     | Single-coin view: price, market data, description. |
-| **Market Overview** | `btc_marketoverview` | Table of top coins by market cap. |
+## Plug and play
 
-All plugins use a **shared service** `CoinGeckoService` (`Classes/Service/CoinGeckoService.php`) so that:
+- **No setup required** — Install, add a content element, and it works.
+- **No TypoScript** — You don’t need to include any setup or configuration in your site.
+- **No “set” inclusion** — The extension registers its content elements automatically.
+- **Default styling included** — Each plugin comes with its own CSS so it looks good in any template. Styles are responsive and work on desktop and mobile.
+- **Customize if you like** — You can override the Fluid template files and the CSS to match your design. Copy the templates from `Resources/Private/Templates/` into your site package or another extension and adjust markup and styling as needed.
 
-- API logic lives in one place.
-- New plugins (e.g. “Favorites”, “Compare”) only need a new controller + template and can reuse the same service and DTOs.
+---
+
+## Content elements
+
+After installation you’ll find these under **Content elements** when editing a page:
+
+| Content element      | What it does |
+|----------------------|--------------|
+| **Bitcoin Hub: Price Ticker**   | A compact list of coin prices (e.g. top 10 or your chosen coins). |
+| **Bitcoin Hub: Coin Detail**    | One coin in detail: current price, market cap, volume, 24h change, and description. |
+| **Bitcoin Hub: Market Overview**| A table of the top coins by market cap. Column headers are clickable to sort. |
+
+Each element has its own settings (e.g. number of coins, which coin to show). Configure them in the content element’s **Plugin settings** tab in the TYPO3 backend.
+
+---
 
 ## Configuration
 
-- **FlexForms** per plugin: limit, coin IDs, etc. (see Backend when adding the content element).
-- **CoinGecko** public API is used by default; no API key required (rate limits apply). Optional: override the API base URL via `Configuration/Services.yaml` for `CoinGeckoService`.
+- **Plugin settings:** When you add a content element, use the **Plugin settings** tab (FlexForm) to set limits, coin IDs, etc.
+- **CoinGecko:** The extension uses the public CoinGecko API by default. No API key is needed; their [rate limits](https://www.coingecko.com/en/api/pricing) apply.
 
-## Adding a new plugin
+---
 
-1. Add controller under `Classes/Controller/`.
-2. Register in `ext_localconf.php` with `ExtensionUtility::configurePlugin()`.
-3. Register in `Configuration/TCA/Overrides/tt_content.php` with `addPlugin()` and optional FlexForm.
-4. Add icon in `Configuration/Icons.php` and `Resources/Public/Icons/`.
-5. Add Fluid template under `Resources/Private/Templates/<ControllerName>/`.
+## Customizing templates and CSS
+
+- **Templates:** To change the markup, copy the Fluid templates from `EXT:btc/Resources/Private/Templates/` into your site package (or another extension) and override them there.
+- **Styles:** The extension ships with compiled CSS in `Resources/Public/Css/`. To change styles you can override those files or replace the CSS reference in your template. The source is SCSS in `Resources/Private/Scss/`; run `npm run build:css` after editing (see `package.json`).

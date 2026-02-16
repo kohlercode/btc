@@ -10,13 +10,11 @@
         <type>array</type>
         <el>
           <settings.coinId>
-            <TCEforms>
-              <label>LLL:EXT:btc/Resources/Private/Language/locallang_flexform.xlf:CoinDetail.coinId</label>
-              <config>
-                <type>input</type>
-                <placeholder>bitcoin</placeholder>
-              </config>
-            </TCEforms>
+            <label>LLL:EXT:btc/Resources/Private/Language/locallang_flexform.xlf:CoinDetail.coinId</label>
+            <config>
+              <type>input</type>
+              <placeholder>bitcoin</placeholder>
+            </config>
           </settings.coinId>
         </el>
       </ROOT>

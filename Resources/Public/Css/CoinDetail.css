@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/**
+ * Bitcoin Hub – Coin Detail plugin styles
+ * Standalone, responsive. Author: Simon Köhler (KOHLERCODE LLC)
+ */
+.btc-coindetail {
+  --btc-detail-bg: #1a1d24;
+  --btc-detail-border: #2d323c;
+  --btc-detail-text: #e8eaed;
+  --btc-detail-muted: #9aa0a6;
+  --btc-up: #0ecb81;
+  --btc-down: #f6465d;
+  --btc-detail-radius: 12px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--btc-detail-text);
+  background: var(--btc-detail-bg);
+  border: 1px solid var(--btc-detail-border);
+  border-radius: var(--btc-detail-radius);
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+.btc-coindetail__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--btc-detail-border);
+}
+
+.btc-coindetail__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.btc-coindetail__title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.btc-coindetail__price {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--btc-detail-text);
+}
+
+.btc-coindetail__stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btc-coindetail__stats dl {
+  margin: 0;
+}
+
+.btc-coindetail__stats dt {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.8125rem;
+  color: var(--btc-detail-muted);
+  font-weight: 500;
+}
+
+.btc-coindetail__stats dd {
+  margin: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.btc-coindetail__description {
+  font-size: 0.9375rem;
+  color: var(--btc-detail-muted);
+  line-height: 1.6;
+}
+.btc-coindetail__description a {
+  color: #8ab4f8;
+  text-decoration: none;
+}
+.btc-coindetail__description a:hover {
+  text-decoration: underline;
+}
+.btc-coindetail__description p {
+  margin: 0 0 0.75rem 0;
+}
+.btc-coindetail__description p:last-child {
+  margin-bottom: 0;
+}
+
+.btc-coindetail__error {
+  margin: 0;
+  padding: 1rem;
+  background: rgba(246, 70, 93, 0.1);
+  border: 1px solid var(--btc-down);
+  border-radius: var(--btc-detail-radius);
+  color: var(--btc-down);
+}
+
+@media (min-width: 480px) {
+  .btc-coindetail__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 640px) {
+  .btc-coindetail {
+    padding: 1.5rem;
+  }
+  .btc-coindetail__stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

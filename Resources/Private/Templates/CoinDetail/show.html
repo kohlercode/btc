@@ -1,5 +1,6 @@
 <f:layout name="default" />
 <f:section name="Main">
+  <f:asset.css identifier="CoinDetail" href="EXT:btc/Resources/Public/Css/CoinDetail.css" />
   <f:if condition="{coin}">
     <f:then>
       <div class="btc-coindetail" data-coin-id="{coinId}">
@@ -14,15 +15,22 @@
           <dl>
             <dt><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:label.marketCap" /></dt>
             <dd>{coin.market_data.market_cap.usd -> f:format.number(decimals: 0, decimalSeparator: ',', thousandsSeparator: '.')} <f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:currency.usd" /></dd>
+          </dl>
+          <dl>
             <dt><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:label.volume24h" /></dt>
             <dd>{coin.market_data.total_volume.usd -> f:format.number(decimals: 0, decimalSeparator: ',', thousandsSeparator: '.')} <f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:currency.usd" /></dd>
+          </dl>
+          <dl>
             <dt><f:translate key="LLL:EXT:btc/Resources/Private/Language/locallang.xlf:label.change24h" /></dt>
             <dd>{coin.market_data.price_change_percentage_24h -> f:format.number(decimals: 2)}%</dd>
           </dl>
         </div>
         <f:if condition="{coin.description.en}">
           <div class="btc-coindetail__description">
-            <f:format.html>{coin.description.en}</f:format.html>
+            <f:debug>{coin}</f:debug>
+            <p>
+            <f:format.nl2br>{coin.description.en}</f:format.nl2br>
+            </p>
           </div>
         </f:if>
       </div>

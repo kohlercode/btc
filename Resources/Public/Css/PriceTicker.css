@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/**
+ * Bitcoin Hub – Price Ticker plugin styles
+ * Standalone, responsive. Author: Simon Köhler (KOHLERCODE LLC)
+ */
+.btc-priceticker {
+  --btc-ticker-bg: #1a1d24;
+  --btc-ticker-border: #2d323c;
+  --btc-ticker-text: #e8eaed;
+  --btc-ticker-muted: #9aa0a6;
+  --btc-up: #0ecb81;
+  --btc-down: #f6465d;
+  --btc-ticker-radius: 8px;
+  --btc-ticker-gap: 0.75rem;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--btc-ticker-text);
+  background: var(--btc-ticker-bg);
+  border: 1px solid var(--btc-ticker-border);
+  border-radius: var(--btc-ticker-radius);
+  padding: var(--btc-ticker-gap);
+  box-sizing: border-box;
+}
+
+.btc-priceticker__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.btc-priceticker__item {
+  display: grid;
+  grid-template-columns: 24px 1fr auto auto;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--btc-ticker-border);
+}
+.btc-priceticker__item:last-child {
+  border-bottom: none;
+}
+
+.btc-priceticker__icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  grid-column: 1;
+}
+
+.btc-priceticker__name {
+  font-weight: 600;
+  min-width: 0;
+  grid-column: 2;
+}
+
+.btc-priceticker__price {
+  color: var(--btc-ticker-text);
+  grid-column: 3;
+  justify-self: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.btc-priceticker__change {
+  grid-column: 4;
+  justify-self: end;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.btc-priceticker__change--up {
+  color: var(--btc-up);
+}
+.btc-priceticker__change--down {
+  color: var(--btc-down);
+}

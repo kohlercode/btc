@@ -10,24 +10,20 @@
         <type>array</type>
         <el>
           <settings.limit>
-            <TCEforms>
-              <label>LLL:EXT:btc/Resources/Private/Language/locallang_flexform.xlf:PriceTicker.limit</label>
-              <config>
-                <type>input</type>
-                <size>5</size>
-                <eval>int</eval>
-                <default>10</default>
-              </config>
-            </TCEforms>
+            <label>LLL:EXT:btc/Resources/Private/Language/locallang_flexform.xlf:PriceTicker.limit</label>
+            <config>
+              <type>input</type>
+              <size>5</size>
+              <eval>int</eval>
+              <default>10</default>
+            </config>
           </settings.limit>
           <settings.coinIds>
-            <TCEforms>
-              <label>LLL:EXT:btc/Resources/Private/Language/locallang_flexform.xlf:PriceTicker.coinIds</label>
-              <config>
-                <type>input</type>
-                <placeholder>bitcoin,ethereum,cardano</placeholder>
-              </config>
-            </TCEforms>
+            <label>LLL:EXT:btc/Resources/Private/Language/locallang_flexform.xlf:PriceTicker.coinIds</label>
+            <config>
+              <type>input</type>
+              <placeholder>bitcoin,ethereum,cardano</placeholder>
+            </config>
           </settings.coinIds>
         </el>
       </ROOT>
