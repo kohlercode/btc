@@ -81,8 +81,8 @@ ExtensionManagementUtility::addPiFlexFormValue(
     'btc_priceticker'
 );
 
-$GLOBALS['TCA']['tt_content']['types']['btc_priceticker']['showitem'] .= ',--div--;Plugin Settings,pi_flexform';
-$GLOBALS['TCA']['tt_content']['types']['btc_coindetail']['showitem'] .= ',--div--;Plugin Settings,pi_flexform';
-$GLOBALS['TCA']['tt_content']['types']['btc_marketoverview']['showitem'] .= ',--div--;Plugin Settings,pi_flexform';
+$GLOBALS['TCA']['tt_content']['types']['btc_priceticker']['showitem'] .= ',--div--;BTC,pi_flexform';
+$GLOBALS['TCA']['tt_content']['types']['btc_coindetail']['showitem'] .= ',--div--;BTC,pi_flexform';
+$GLOBALS['TCA']['tt_content']['types']['btc_marketoverview']['showitem'] .= ',--div--;BTC,pi_flexform';
 // Define the global group for your Bitcoin Hub
 $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['itemGroups']['bitcoin_hub'] = 'Bitcoin Hub';
