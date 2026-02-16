@@ -7,7 +7,7 @@
 
 $EM_CONF['btc'] = [
     'title' => 'Bitcoin Hub',
-    'description' => 'Frontend plugins showing realtime cryptocurrency information via the CoinGecko API.',
+    'description' => 'Frontend plugins showing realtime cryptocurrency information via the CoinGecko API. No API key required. No setup required. Plug and play.',
     'category' => 'plugin',
     'author' => 'Simon Köhler',
     'author_email' => '',
