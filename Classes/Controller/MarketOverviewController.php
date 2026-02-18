@@ -7,6 +7,7 @@ namespace KOHLERCODE\Btc\Controller;
 use KOHLERCODE\Btc\Service\CoinGeckoService;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 
 /**
  * Renders a market overview (top coins by market cap).
@@ -17,6 +18,7 @@ class MarketOverviewController extends ActionController
 {
     public function __construct(
         private readonly CoinGeckoService $coinGeckoService,
+        private readonly ExtensionConfiguration $extensionConfiguration,
     ) {
     }
 
@@ -27,6 +29,7 @@ class MarketOverviewController extends ActionController
 
         $coins = $this->coinGeckoService->getMarkets($limit, 1);
         $this->view->assign('coins', $coins);
+        $this->view->assign('extconf', $this->extensionConfiguration->get('btc'));
         return $this->htmlResponse();
     }
 }

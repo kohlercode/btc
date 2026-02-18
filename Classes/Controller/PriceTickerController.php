@@ -7,6 +7,7 @@ namespace KOHLERCODE\Btc\Controller;
 use KOHLERCODE\Btc\Service\CoinGeckoService;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 
 /**
  * Renders a compact ticker list of coin prices (top N or selected ids).
@@ -17,6 +18,7 @@ class PriceTickerController extends ActionController
 {
     public function __construct(
         private readonly CoinGeckoService $coinGeckoService,
+        private readonly ExtensionConfiguration $extensionConfiguration,
     ) {
     }
 
@@ -34,6 +36,7 @@ class PriceTickerController extends ActionController
         }
 
         $this->view->assign('coins', $coins);
+        $this->view->assign('extconf', $this->extensionConfiguration->get('btc'));
         return $this->htmlResponse();
     }
 }

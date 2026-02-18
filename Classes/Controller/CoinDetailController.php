@@ -7,6 +7,7 @@ namespace KOHLERCODE\Btc\Controller;
 use KOHLERCODE\Btc\Service\CoinGeckoService;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 
 /**
  * Renders a single coin detail view (price, stats, description).
@@ -17,6 +18,7 @@ class CoinDetailController extends ActionController
 {
     public function __construct(
         private readonly CoinGeckoService $coinGeckoService,
+        private readonly ExtensionConfiguration $extensionConfiguration,
     ) {
     }
 
@@ -30,6 +32,7 @@ class CoinDetailController extends ActionController
         $coin = $this->coinGeckoService->getCoinById($coinId);
         $this->view->assign('coin', $coin);
         $this->view->assign('coinId', $coinId);
+        $this->view->assign('extconf', $this->extensionConfiguration->get('btc'));
         return $this->htmlResponse();
     }
 }
