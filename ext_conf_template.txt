@@ -1,0 +1,5 @@
+# cat=basic/settings/10; type=string; label=LLL:EXT:btc/Resources/Private/Language/locallang_db.xlf:ext_conf.apiKey
+apiKey = 
+
+# cat=basic/settings/20; type=boolean; label=LLL:EXT:btc/Resources/Private/Language/locallang_db.xlf:ext_conf.isPro
+isPro = 0
