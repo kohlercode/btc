@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.1.0] - 2026-02-18
+
+### Added
+
+- **Extension settings (CoinGecko API key)**
+  - New extension configuration in `ext_conf_template.txt` with `apiKey` and `isPro` options.
+  - `CoinGeckoService` now injects `ExtensionConfiguration` and automatically attaches the correct HTTP header when an API key is configured:
+    - Demo key → `x-cg-demo-api-key`
+    - Pro key  → `x-cg-pro-api-key`
+  - If no key is set, the extension continues to use the public CoinGecko API (no API key required).
+- **Localization**
+  - Updated `de.locallang_db.xlf` and `es.locallang_db.xlf` with labels for the new extension settings.
+
+---
+
 ## [1.0.0] - 2025-02-16
 
 ### Added
@@ -51,4 +66,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+[1.1.0]: https://github.com/kohlercode/btc/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/kohlercode/btc/releases/tag/v1.0.0
