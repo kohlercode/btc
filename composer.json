@@ -1,7 +1,7 @@
 {
     "name": "kohlercode/btc",
     "type": "typo3-cms-extension",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "BTC - Frontend plugins for realtime cryptocurrency data via CoinGecko API",
     "license": "GPL-2.0-or-later",
     "authors": [
