@@ -7,6 +7,7 @@ namespace KOHLERCODE\Btc\Service;
 use KOHLERCODE\Btc\Domain\Model\Dto\CoinMarket;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 
 /**
  * Client for CoinGecko API. All plugin data should be fetched through this service.
@@ -20,12 +21,14 @@ class CoinGeckoService
     public function __construct(
         private readonly ClientInterface $httpClient,
         private readonly RequestFactoryInterface $requestFactory,
+        private readonly ExtensionConfiguration $extensionConfiguration,
         string $baseUrl = '',
     ) {
         $this->baseUrl = $baseUrl !== '' ? rtrim($baseUrl, '/') : self::DEFAULT_BASE_URL;
     }
 
     private string $baseUrl;
+    private array $extconf = [];
 
     /**
      * Fetch top N coins by market cap (for MarketOverview / PriceTicker).
@@ -92,6 +95,14 @@ class CoinGeckoService
     private function request(string $url): ?array
     {
         $request = $this->requestFactory->createRequest('GET', $url);
+        $this->extconf = $this->extensionConfiguration->get('btc');
+
+        // Automatically attach the API key header if a key exists
+        if ($this->extconf['apiKey'] !== '') {
+            $headerName = $this->extconf['isPro'] ? 'x-cg-pro-api-key' : 'x-cg-demo-api-key';
+            $request = $request->withHeader($headerName, $this->extconf['apiKey']);
+        }
+        
         $response = $this->httpClient->sendRequest($request);
         if ($response->getStatusCode() !== 200) {
             return null;

@@ -75,3 +75,9 @@
 .btc-priceticker__change--down {
   color: var(--btc-down);
 }
+
+.btc-attribution {
+  text-align: center;
+  padding: 1rem 0 0 0;
+  color: #6e6e6e;
+}

@@ -32,5 +32,10 @@
         </f:for>
       </tbody>
     </table>
+    <f:if condition="!{extconf.isPro}">
+      <p class="btc-attribution">
+        Powered by <a href="https://www.coingecko.com" target="_blank">CoinGecko API</a>
+      </p>
+    </f:if>
   </div>
 </f:section>

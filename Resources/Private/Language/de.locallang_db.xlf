@@ -18,6 +18,14 @@
         <source>Bitcoin Hub: Market Overview</source>
         <target>Bitcoin Hub: Marktübersicht</target>
       </trans-unit>
+      <trans-unit id="ext_conf.apiKey">
+        <source>CoinGecko API Key: Enter your demo or pro API key here.</source>
+        <target>CoinGecko-API-Schlüssel: Geben Sie hier Ihren Demo- oder Pro-API-Schlüssel ein.</target>
+      </trans-unit>
+      <trans-unit id="ext_conf.isPro">
+        <source>CoinGecko Pro: Check this box if the key above is a paid Pro plan key.</source>
+        <target>CoinGecko Pro: Aktivieren Sie dieses Kontrollkästchen, wenn der obige Schlüssel zu einem kostenpflichtigen Pro-Tarif gehört.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
