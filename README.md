@@ -53,7 +53,8 @@ Each element has its own settings (e.g. number of coins, which coin to show). Co
 ## Configuration
 
 - **Plugin settings:** When you add a content element, use the **Plugin settings** tab (FlexForm) to set limits, coin IDs, etc.
-- **CoinGecko:** The extension uses the public CoinGecko API by default. No API key is needed; their [rate limits](https://www.coingecko.com/en/api/pricing) apply.
+- **CoinGecko API key (optional):** In the TYPO3 backend, go to **Admin Tools → Settings → Extension Configuration → btc**. Here you can enter a CoinGecko API key and mark it as a **Pro** key if you have a paid plan. Bitcoin Hub will then automatically send the correct HTTP header (`x-cg-demo-api-key` or `x-cg-pro-api-key`) with all API requests.
+- **Public API by default:** If you don’t configure an API key, the extension continues to use the free public CoinGecko API. No API key is required; their [rate limits](https://www.coingecko.com/en/api/pricing) still apply.
 
 ---
 
